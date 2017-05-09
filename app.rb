@@ -64,7 +64,6 @@ post('/search_results') do
   start_date = params[:start_date]
   end_date = params[:end_date]
   @search_purchases = Purchase.purchase_date(start_date, end_date)
-binding.pry
   erb(:search_results)
 end
 

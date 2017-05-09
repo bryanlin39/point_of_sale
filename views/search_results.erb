@@ -1,6 +1,8 @@
 <h4>Transactions between the searched dates:</h4>
 <ul>
   <% @search_purchases.each() do |purchase| %>
-  <li><%= purchase.name() %></li>
+  <li><%= purchase.date() %>, <%= purchase.name() %>, $<%= purchase.totalcost() %></li>
   <% end %>
 </ul>
+
+<a href='/'>Back to Home</a>
