@@ -1,0 +1,11 @@
+<h1>Edit product here:</h1>
+
+<form class="form-group" action="/edit_product/<%= @product.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <label for='description'>Change description:</label>
+  <input type='text' name='description'>
+  <label for='price'>Change price:</label>
+  <input type='text' name='price'>
+
+  <button type="submit" name="button">Edit</button>
+</form>

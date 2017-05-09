@@ -1,0 +1,6 @@
+<h4>Transactions between the searched dates:</h4>
+<ul>
+  <% @search_purchases.each() do |purchase| %>
+  <li><%= purchase.name() %></li>
+  <% end %>
+</ul>

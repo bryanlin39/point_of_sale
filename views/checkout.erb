@@ -1,0 +1,19 @@
+<h3>Transaction Date: <%= @purchase.date() %></h3>
+<h3>Receipt for <%= @purchase.name() %></h3>
+
+<ul>
+  <% @products.each() do |product| %>
+  <li><%= product.description %>: $<%= product.price %></li>
+  <% end %>
+</ul>
+
+<h3>Transaction Total: $<%= @purchase.totalcost() %><h3>
+
+
+<form action='/products/updated' method='post'>
+  <input type='hidden' name='_method' value='delete'>
+  <% @products.each() do |product| %>
+  <input type='hidden' name='purchased_products[]' value='<%= product.id %>'>
+  <% end %>
+  <button type="submit" name="button">Return to Inventory</button>
+</form>

@@ -1,0 +1,17 @@
+<h1>Product Inventory</h1>
+
+<form class="form-group" action="/checkout" method="post">
+  <% @products.each do |product| %>
+  <input type="checkbox" name="product[]" value="<%= product.id() %>">
+  <%= product.description %>: $<%= product.price %> <a href='/edit_product/<%= product.id() %>'>Edit</a><br>
+  <% end %>
+  <label for="name">Name of customer:</label>
+  <input type="text" name="name">
+  <button type="submit" name="button">Checkout</button>
+</form>
+
+<a href="/products/new">Add new product</a>
+
+<a href="/edit_product">Edit product page here</a>
+
+<a href="/search">Search inventory</a>
